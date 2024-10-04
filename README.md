@@ -1,2 +1,2 @@
-# ebili
- EBILI是一个由易语言和electron开发的一个第三方B站桌面客户端，供轻度适用人群，感谢使用
+使用易语言和Electron开发第三方B站桌面客户端
+![QQ20241004-113500](https://github.com/user-attachments/assets/113248bc-430d-4ae8-9b02-63c375c6112e)
