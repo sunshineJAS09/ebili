@@ -1,1 +1,0 @@
-electron-packager . EBP --platform=win32 --arch=x64 --icon=favicon.ico --out=./out --asar --app-version=1.0  
