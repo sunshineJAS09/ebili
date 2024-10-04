@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang=en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .video-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .video-item {
+            flex: 1 1 calc(33.333% - 20px);
+            box-sizing: border-box;
+            padding: 10px;
+            margin: 5px;
+            max-width: calc(33.333% - 20px);
+        }
+
+        .video-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .video-details {
+            margin-top: 10px;
+        }
+
+        .video-title {
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        .video-stats {
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-list">
+        <!-- Video items will be inserted here by jQuery -->
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            const videos = [
+                {
+                    imgSrc: 'https://i2.hdslb.com/bfs/archive/1817c5f8a56f97bd43b0ecf15fb8fa7095a2549b.jpg',
+                    title: '骂<em class="keyword">资本</em>家？仇富罢了！道路错了，知识越多越离谱！你真的知道什么是<em class="keyword">资本</em>家吗？',
+                    views: '',
+                    comments: '',
+                    length: ''
+                },
+                {
+                    imgSrc: 'https://i2.hdslb.com/bfs/archive/67f31868afa97ca64df845897b453923af7785d5.jpg',
+                    title: '<em class="keyword">资本</em>主义怎么能在一个社会主义国家复辟？（部分修改）',
+                    views: '',
+                    comments: '',
+                    length: ''
+
+                },
+                {
+                    imgSrc: 'https://i0.hdslb.com/bfs/archive/663185282b146de0552ecac31136b47a0273f1a8.jpg',
+                    title: '心理学<em class="keyword">资本</em>化后，普通人是如何变得“不正常”的？',
+                    views: '',
+                    comments: '',
+                    length: ''
+                },
+                {
+                    imgSrc: 'https://i0.hdslb.com/bfs/archive/77c833eb39fda57d16c887efb27e166611fabf26.jpg',
+                    title: '【硬核社会学】<em class="keyword">资本</em>主义的本质是什么？',
+                    views: '',
+                    comments: "",
+                },
+                {
+                    imgSrc: 'https://i0.hdslb.com/bfs/live-key-frame/keyframe10031606000032482170ukdgnt.jpg',
+                    title: '同志们，再不学习<em class="keyword">资本</em>就要骑到头上了',
+                    views: '',
+                    length: ""
+                },
+                {
+                    imgSrc: 'https://i2.hdslb.com/bfs/archive/40745e5a8e4e8a267b2886dfcd4de31ecd3356cc.jpg',
+                    title: '现在还能说<em class="keyword">资本</em>主义会逐渐灭亡吗？【思维实验室】',
+                    views: " ",
+                    length:''
+                }
+            ];
+ videos.forEach(video => {
+                const videoItem = `
+                    <div class="video-item">
+                        <img src="${video.imgSrc}"alt="Video Thumbnail">
+                        <div class="video-details">
+                            <div class="video-title">${video.title}</div>
+                            <div class="video-stats">
+                                <span>${video.views} views</span> |
+                                <span>${video.comments}comments</span> |
+                                <span>${video.length}</span>
+                            </div>
+                            </div>
+                    </div>
+                `;
+                $('.video-list').append(videoItem);
+            });
+        });
+    </script>
+</body>
+</html>
