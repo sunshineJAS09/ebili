@@ -1,6 +1,11 @@
 from webview import *
 import time
 from webview.dom import DOMEventHandler
+import win32gui
+import win32con
+import keyboard
+
+import win32clipboard
 import os
 bvid = '114514'
 with open('./bvid.txt','r') as bvrd:
@@ -25,6 +30,8 @@ def cookiesdaoru():
             bili_jcts = file
 
 def auto_click(window):
+   with open('./dontopen.txt','w') as file:
+       file.write('114514')
    global sessdatas, bili_jcts,cookie,x
    if os.path.exists('D:\\temp.txt'):
         cookiesdaoru()
@@ -77,7 +84,19 @@ def auto_click(window):
            """
            window.evaluate_js(cookiedaoru)
            window.show()
+           os.remove('./dontopen.txt')
+           cookiedaoru = """
+           document.addEventListener('keydown', function(event) {
+            event.preventDefault();  // 阻止默认行为
+            });
+           """
+           window.evaluate_js(cookiedaoru)
            break
+   while True:
+        if keyboard.is_pressed('f'):  # 如果按下了 F 键
+            keyboard.block_key('f')  # 阻止 F 键的默认行为
+
+
 
 
 
